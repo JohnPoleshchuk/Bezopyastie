@@ -3,6 +3,7 @@
 
 #include <QApplication>
 #include <QQmlApplicationEngine>
+#include <QIcon>
 
 #include "autogen/environment.h"
 
@@ -10,6 +11,8 @@ int main(int argc, char *argv[])
 {
     set_qt_environment();
     QApplication app(argc, argv);
+
+    app.setWindowIcon(QIcon(":/image/logo.png"));
 
     QQmlApplicationEngine engine;
     const QUrl url(mainQmlFile);
