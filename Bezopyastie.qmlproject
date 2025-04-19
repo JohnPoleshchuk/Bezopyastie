@@ -17,8 +17,8 @@ Project {
     qtForMCUs: false
 
     multilanguageSupport: true
-    primaryLanguage: "en"
-    supportedLanguages: [ "en" ]
+    primaryLanguage: "ru"
+    supportedLanguages: [ "ru" ]
 
     Environment {
         QML_COMPAT_RESOLVE_URLS_ON_ASSIGNMENT: "1"

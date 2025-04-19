@@ -9,11 +9,15 @@ qt6_add_qml_module(BezopyastieContent
     VERSION 1.0
     RESOURCE_PREFIX "/qt/qml"
     QML_FILES
-        "Screen01.ui.qml"
         "App.qml"
+
+        "ui/RightSide/MapView.qml"
+        "ui/RightSide/RightSide.qml"
+        "ui/LeftSide/Profile.qml"
         "ui/LeftSide/LeftSide.qml"
         "ui/BottomBar/BottomBar.qml"
-        "ui/RightSide/RightSide.qml"
+    RESOURCES
+        "ui/RightSide/SeverSteel.png"
 )
 
 

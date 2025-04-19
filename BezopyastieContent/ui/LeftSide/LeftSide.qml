@@ -9,4 +9,7 @@ Rectangle {
     }
     width: parent.width / 3
     color: "grey"
+    Profile {
+        id: profileList
+    }
 }
