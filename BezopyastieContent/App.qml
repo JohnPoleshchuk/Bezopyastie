@@ -1,5 +1,6 @@
 import QtQuick 6.3
 import QtQuick.Window 6.3
+import QtQuick.Controls
 
 import Bezopyastie
 

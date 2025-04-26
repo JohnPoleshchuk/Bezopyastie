@@ -6,5 +6,7 @@
         <file>image/logo.jpg</file>
         <file>image/logo.ico</file>
         <file>image/logo.png</file>
+        <file>database/bezopyastie_bracles.db</file>
+        <file>BezopyastieContent/App.qml</file>
     </qresource>
 </RCC>
