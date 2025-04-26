@@ -24,7 +24,7 @@ Window {
         }
 
     visible: true
-    title: "Bezopyastie"
+    title: "Безопястье"
 
     BottomBar {
         id: bottomBar

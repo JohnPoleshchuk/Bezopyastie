@@ -16,8 +16,8 @@ qt6_add_qml_module(BezopyastieContent
         "ui/LeftSide/Profile.qml"
         "ui/LeftSide/LeftSide.qml"
         "ui/BottomBar/BottomBar.qml"
+        "ui/BottomBar/ProfileSettings.qml"
+        "ui/BottomBar/WindowAddBracle.qml"
     RESOURCES
         "ui/RightSide/SeverSteel.png"
 )
-
-
