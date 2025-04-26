@@ -1,13 +1,11 @@
 import QtQuick 2.15
-import QtQuick.Controls 2.15
-import QtQuick.Window 2.15
 
 Rectangle {
-    id: plusButton
+    id: minusButton
     width: parent.height * 0.7
     height: width
     anchors {
-        left: parent.left
+        left: plusButton.right
         right: LeftSide.right
         rightMargin: 10
         verticalCenter: parent.verticalCenter
@@ -22,19 +20,11 @@ Rectangle {
         color: "white"
     }
 
-    // Vertical line of plus
-    Rectangle {
-        width: 2
-        height: parent.height * 0.6
-        anchors.centerIn: parent
-        color: "white"
-    }
-
     MouseArea {
         id: button
         anchors.fill: parent
         onClicked: {
-            deviceSettingsWindow.show()
+            deviceDeletingWindow.show()
             deviceIdField.text = "" // Очищаем поля при открытии
             deviceNameField.text = ""
         }
@@ -47,7 +37,7 @@ Rectangle {
             }
         }
     }
-    WindowAddBracle {
-        id: deviceSettingsWindow
+    WindowDeleteBracle {
+        id: deviceDeletingWindow
     }
 }

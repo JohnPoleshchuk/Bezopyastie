@@ -10,8 +10,12 @@ Rectangle {
     height: parent.height / 16
     color: "black"
 
-    ProfileSettings {
+    DeviceAddingButton {
         id:plusButton
+    }
+
+    DeviceDeletingButton {
+        id: minusButton
     }
 
     Timer {
@@ -34,7 +38,7 @@ Rectangle {
 
     Text {
         anchors {
-            left: plusButton.right
+            left: minusButton.right
             verticalCenter: parent.verticalCenter
         }
         color: "white"

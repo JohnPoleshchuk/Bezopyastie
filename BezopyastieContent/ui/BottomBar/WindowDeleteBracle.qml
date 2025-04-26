@@ -3,7 +3,7 @@ import QtQuick.Window 6.3
 import QtQuick.Controls
 
 Window {
-    id: deviceAddingWindow
+    id: deviceDeletingWindow
     title: "Добавление устройства"
     width: 300
     height: 190
@@ -20,7 +20,7 @@ Window {
             anchors.margins: 15
 
             Text {
-                text: "Добавление устройства"
+                text: "Удаление устройства"
                 font.bold: true
                 font.pixelSize: 16
                 horizontalAlignment: Text.AlignHCenter
@@ -43,10 +43,10 @@ Window {
                     text: "Сохранить"
                     onClicked: {
                         if(deviceIdField.text) {
-                            var str = "INSERT INTO bracles VALUES(" + deviceIdField.text.toString() + ", 'OFF');"
+                            var str = "DELETE FROM bracles WHERE bracle_id="+ deviceIdField.text.toString() +";"
                             dbManager.executeQuery(str)
-                            deviceSettingsWindow.close()
-                            console.log("Устройство сохранено")
+                            deviceDeletingWindow.close()
+                            console.log("Устройство удалено")
                         } else {
                             errorText.visible = true
                         }
@@ -55,7 +55,7 @@ Window {
 
                 Button {
                     text: "Закрыть"
-                    onClicked: deviceAddingWindow.close()
+                    onClicked: deviceDeletingWindow.close()
                 }
             }
 

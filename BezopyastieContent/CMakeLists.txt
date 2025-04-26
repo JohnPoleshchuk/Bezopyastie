@@ -16,8 +16,10 @@ qt6_add_qml_module(BezopyastieContent
         "ui/LeftSide/Profile.qml"
         "ui/LeftSide/LeftSide.qml"
         "ui/BottomBar/BottomBar.qml"
-        "ui/BottomBar/ProfileSettings.qml"
+        "ui/BottomBar/DeviceAddingButton.qml"
         "ui/BottomBar/WindowAddBracle.qml"
+        "ui/BottomBar/DeviceDeletingButton.qml"
+        "ui/BottomBar/WindowDeleteBracle.qml"
     RESOURCES
         "ui/RightSide/SeverSteel.png"
 )
