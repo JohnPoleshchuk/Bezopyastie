@@ -16,7 +16,7 @@ set(QML_IMPORT_PATH ${QT_QML_OUTPUT_DIRECTORY}
     CACHE STRING "Import paths for Qt Creator's code model"
     FORCE
 )
-find_package(Qt6 6.8.2 REQUIRED COMPONENTS
+find_package(Qt6 REQUIRED COMPONENTS
   Core
   Gui
   Widgets
@@ -24,12 +24,20 @@ find_package(Qt6 6.8.2 REQUIRED COMPONENTS
   Quick
   QuickTimeline
   ShaderTools
+  Sql
 )
+
+
 qt_standard_project_setup()
 
 
 qt_add_executable(${CMAKE_PROJECT_NAME}
-  resources.qrc)
+  resources.qrc
+  App/dbmanager.h
+  App/dbmanager.cpp
+)
+
+target_link_libraries(${CMAKE_PROJECT_NAME} PRIVATE Qt6::Sql)
 
 qt_add_resources(${CMAKE_PROJECT_NAME} "configuration"
     PREFIX "/"

@@ -11,7 +11,14 @@ ListView {
     }
     height: leftSide.height
     width: leftSide.width - 20
-    model: 20
+
+
+    property int count: -1
+    Component.onCompleted: {
+        count = dbManager.getRowCount("bracles")
+    }
+
+    model: count
     spacing: 10
 
     delegate : Rectangle {

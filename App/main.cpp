@@ -4,8 +4,10 @@
 #include <QApplication>
 #include <QQmlApplicationEngine>
 #include <QIcon>
+#include <QQmlContext>
 
 #include "autogen/environment.h"
+#include "dbmanager.h"
 
 int main(int argc, char *argv[])
 {
@@ -14,7 +16,15 @@ int main(int argc, char *argv[])
 
     app.setWindowIcon(QIcon(":/image/logo.png"));
 
+    DBManager dbManager;
+    dbManager.openDatabase("C:/Users/welli/OneDrive/Documents/Bezopyastie/database/bezopyastie_bracles.db");
+
     QQmlApplicationEngine engine;
+
+    engine.rootContext()->setContextProperty("dbManager", &dbManager);
+    engine.addImportPath(QCoreApplication::applicationDirPath() + "/qml");
+    engine.addImportPath(":/");
+
     const QUrl url(mainQmlFile);
     QObject::connect(
                 &engine, &QQmlApplicationEngine::objectCreated, &app,
@@ -23,8 +33,6 @@ int main(int argc, char *argv[])
             QCoreApplication::exit(-1);
     }, Qt::QueuedConnection);
 
-    engine.addImportPath(QCoreApplication::applicationDirPath() + "/qml");
-    engine.addImportPath(":/");
     engine.load(url);
 
     if (engine.rootObjects().isEmpty())
