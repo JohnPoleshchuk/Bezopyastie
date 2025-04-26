@@ -31,9 +31,10 @@ QVariantList DBManager::executeQuery(const QString &query)
 
     while (sqlQuery.next()) {
         QVariantMap row;
-        for (int i = 0; i < sqlQuery.record().count(); ++i) {
-            row[sqlQuery.record().fieldName(i)] = sqlQuery.value(i);
-        }
+
+        row["bracle_id"] = sqlQuery.value("bracle_id").toString();
+        row["power"] = sqlQuery.value("power").toString();
+
         results.append(row);
     }
 
