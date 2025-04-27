@@ -9,6 +9,7 @@ Rectangle {
         top: parent.top
         bottom: bottomBar.top
         left: leftSide.right
+        right: parent.right
     }
 
     width: parent.width * (2/3)
